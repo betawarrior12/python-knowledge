@@ -14,7 +14,7 @@ print(walrus)
 
 #### this can be useful to simplify your code. ####
 # without walrus
-inputs = list()
+inputs = []
 while True:
     current = input("Write something ('quit' to stop): ")
     if current == "quit":
@@ -23,7 +23,7 @@ while True:
 
 print(inputs)
 # with walrus
-inputs = list()
+inputs = []
 while (current := input("Write something ('quit' to stop): ")) != "quit":
     inputs.append(current)
 print(inputs)
