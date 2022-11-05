@@ -1,7 +1,5 @@
 # avoid for loops!
-squares = []
-for i in range(5):
-    squares.append(i * i)
+squares = [i * i for i in range(5)]
 print(squares)
 
 # better: use list comprehension
@@ -25,7 +23,7 @@ print(evens)
 def is_even(i):
     return i%2 == 0
 
-evens = [i for i in range(20) if is_even(i)] 
+evens = [i for i in range(20) if is_even(i)]
 print(evens)   
 
 # modify
@@ -52,7 +50,7 @@ print(matrix2d)
 # generators can also be created with generator expressions: 
 # new_generator = (expression for i in iterable)
 
-s = sum([i * i for i in range(1000)])
+s = sum(i * i for i in range(1000))
 print(s)
 
 s = sum((i * i for i in range(1000)))
@@ -73,8 +71,6 @@ stop = timer()
 print(f'{stop-start:.4f} seconds')
 
 start = timer()
-a = []
-for i in range(1_000_000):
-    a.append(i*i)
+a = [i*i for i in range(1_000_000)]
 stop = timer()
 print(f'{stop-start:.4f} seconds')
